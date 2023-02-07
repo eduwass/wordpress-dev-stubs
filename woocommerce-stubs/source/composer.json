@@ -1,0 +1,24 @@
+{
+    "require": {
+        "php": "~7.1",
+        "ext-gettext": "*",
+        "ext-hash": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "ext-openssl": "*",
+        "woocommerce/woocommerce": "7.3.0"
+    },
+    "minimum-stability": "stable",
+    "extra": {
+        "installer-paths": {
+            "woocommerce/packages/{$name}/": [
+                "woocommerce/action-scheduler",
+                "woocommerce/woocommerce-blocks",
+                "woocommerce/woocommerce-admin"
+            ],
+            "{$name}/": [
+                "type:wordpress-plugin"
+            ]
+        }
+    }
+}

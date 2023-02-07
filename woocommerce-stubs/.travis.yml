@@ -1,0 +1,39 @@
+# TravisCI configuration for php-stubs/woocommerce-stubs
+
+language: "php"
+os:
+  - "linux"
+dist: "bionic"
+
+cache:
+  directories:
+    - "$HOME/.composer/cache"
+
+php:
+  - "8.0"
+  - "7.4"
+  - "7.3"
+
+before_install:
+  - "phpenv config-rm xdebug.ini"
+  - "composer validate --strict"
+
+install:
+  - "composer update --no-interaction"
+  ## Reinstall sub-packages into /packages/
+  #- "composer update --no-interaction"
+  - |
+    LATEST="$(jq -r '."require"."woocommerce/woocommerce"' source/composer.json)"
+    wget -P source/ "https://downloads.wordpress.org/plugin/woocommerce.${LATEST}.zip"
+    unzip -q -d source/ "source/woocommerce.${LATEST}.zip"
+
+before_script:
+  - "cat ./source/woocommerce/woocommerce.php"
+
+script:
+  - "bash -x ./generate.sh"
+  - "php -l woocommerce-stubs.php"
+  - "php -l woocommerce-packages-stubs.php"
+  - "git diff --exit-code"
+  - |
+    php -r 'require "vendor/php-stubs/wordpress-stubs/wordpress-stubs.php"; require "woocommerce-stubs.php"; require "woocommerce-packages-stubs.php";'
