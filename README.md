@@ -21,3 +21,9 @@ git add * -A
 git commit -m "Update stubs"
 git push
 ```
+
+## Credits
+This repo is a combination of the following repos:
+- https://github.com/php-stubs/wordpress-stubs
+- https://github.com/php-stubs/woocommerce-stubs
+- https://github.com/php-stubs/acf-pro-stubs
