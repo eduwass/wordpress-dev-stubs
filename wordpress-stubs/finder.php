@@ -1,5 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
+// phpcs:disable Squiz.PHP.CommentedOutCode
+
 return \StubsGenerator\Finder::create()
     ->in('source/wordpress')
     // Shim for load-styles.php and load-scripts.php.
@@ -41,5 +45,4 @@ return \StubsGenerator\Finder::create()
     //->notPath('wp-includes/theme-compat/footer.php')
     //->notPath('wp-includes/theme-compat/header.php')
     //->notPath('wp-includes/theme-compat/sidebar.php')
-    ->sortByName()
-;
+    ->sortByName();

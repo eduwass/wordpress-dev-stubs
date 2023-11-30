@@ -1,3 +1,12 @@
+> [!IMPORTANT]
+> Hello everyone! This is Viktor who runs the php-stubs organization. I am planning to stop contributing to the WordPress ecosystem because it is extremely difficult and I do not earn (min) €100/month.
+
+Please support my work to avoid abandoning this package.
+
+[![Sponsor](https://github.com/szepeviktor/.github/raw/master/.github/assets/github-like-sponsor-button.svg)](https://github.com/sponsors/php-stubs)
+
+Thank you!
+
 # WordPress Stubs
 
 [![Packagist stats](https://img.shields.io/packagist/dt/php-stubs/wordpress-stubs.svg)](https://packagist.org/packages/php-stubs/wordpress-stubs/stats)
@@ -14,11 +23,7 @@ using [php-stubs/generator](https://github.com/php-stubs/generator).
 
 ### Requirements
 
-- PHP 7.1+
-- Sodium PHP extension as latest WordPress core uses it and **compat code is removed** from stubs,
-  Sodium is included in PHP from version 7.2, in 7.1 issue `pecl install libsodium`
-  or install the `paragonie/sodium_compat` package
-- For PHP <7.3 install the `symfony/polyfill-php73` as development dependency
+- PHP 7.4 or 8.0
 
 ### Installation
 
@@ -71,7 +76,7 @@ This package is versioned to match the WordPress version from which the stubs ar
 
 1. Run modern PHP version
 1. Clone this repository and `cd` into it
-1. Update `"johnpbloch/wordpress": "x.x.x"` in `composer.json` with the desired version
+1. Update `"johnpbloch/wordpress": "x.x.x"` in `source/composer.json` with the desired version
 1. Run `composer update`
 1. And run `./generate.sh`
 

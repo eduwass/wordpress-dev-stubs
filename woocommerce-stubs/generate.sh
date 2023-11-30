@@ -16,6 +16,7 @@ test -d "source/woocommerce"
 
 # Exclude globals.
 "$(dirname "$0")/vendor/bin/generate-stubs" \
+    --include-inaccessible-class-nodes \
     --force \
     --finder=finder.php \
     --header="$HEADER" \
@@ -31,6 +32,7 @@ printf '\nnamespace {\n%s\n}\n' "define('WC_VERSION', '0.0.0');" >>"$FILE"
 
 # Packages.
 "$(dirname "$0")/vendor/bin/generate-stubs" \
+    --include-inaccessible-class-nodes \
     --force \
     --finder=finder-packages.php \
     --header="$HEADER" \

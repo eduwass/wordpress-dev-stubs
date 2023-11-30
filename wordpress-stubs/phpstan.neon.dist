@@ -1,0 +1,12 @@
+parameters:
+    paths:
+        - finder.php
+        - functionMap.php
+        - visitor.php
+        - tests/
+    excludePaths:
+        - tests/data/
+    level: 8
+    featureToggles:
+        alwaysTrueAlwaysReported: true
+        listType: true
